@@ -36,7 +36,7 @@ Several newer SCID-based DID methods now support a full range of DID features in
 
 - [did:plc](https://github.com/did-method-plc/did-method-plc) (used by [Bluesky](https://bsky.app/))
 
-`did:webs` and `did:webvh` are web-based DID methods where the DID is bound to the location of a specific web server. While some degree of portability is still possible by using the DID document `alsoKnownAs` property to establish synonyms with other DIDs, this design does not support the requirement for the DID alone be able to serve as a permanent immutable account identifier (for more about this requirement, see [*Appendix B*](https://docs.google.com/document/d/1eiy-yBH4EwGwxBBg8QlDndweD4CE0sBRjPXtRxyq3AY/edit?tab=t.0#heading=h.aagb4wle03jq)).
+`did:webs` and `did:webvh` are web-based DID methods where the DID is bound to the location of a specific web server. While some degree of portability is still possible by using the DID document `alsoKnownAs` property to establish synonyms with other DIDs, this design does not support the requirement for the DID alone be able to serve as a permanent immutable account identifier (for more about this requirement, see [*Appendix B*](#appendix-b%3A-bluesky-did-requirements)).
 
 `did:jlinc` is now being adapted for use with a federated network of servers to increase portability. However it is not currently designed for peer-to-peer usage.
 
