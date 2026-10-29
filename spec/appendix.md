@@ -16,7 +16,7 @@ NOTE: `did:peer` is not included in this list for the reasons explained above—
 
 ### Appendix B: Bluesky DID Requirements
 
-In December 2024, Bryan Newbold of [*Bluesky*](https://bsky.app/) sent the following list of requirements to the DIF DID Method Standardization WG with this list of requirements of DIDs for Bluesky account holders:
+In December 2024, Bryan Newbold of [*Bluesky*](https://bsky.app/) sent the DIF DID Method Standardization WG the following list of requirements of DIDs for Bluesky account holders:
 
 1.  Low and predictable marginal cost at scale (millions of accounts): as an example, SMS verification of user accounts can be prohibitively expensive for service providers, even when costing well under a US dollar per account
 
@@ -41,7 +41,7 @@ Bryan’s email concluded:
 Because it is designed to be fully portable, a `did:scid` DID can have its verification metadata written to any number of target locations (“multi-anchoring”).
 
 ::: warning
-**IMPORTANT: When the verifiable metadata of a** `did:scid` **DID is written to multiple locations, this may raise data synchronization challenges.** Responsibility for those challenges lies with each `did:scid` method type specification and/or implementation.
+**IMPORTANT: When the verification metadata of a** `did:scid` **DID is written to multiple locations, this may raise data synchronization challenges.** Responsibility for those challenges lies with each `did:scid` method type specification and/or implementation.
 :::
 
 Because location independence is a key feature of the did:scid method, we need a location-independent term for the different types of data repositories that could store verification metadata and respond to did:scid DID resolution requests, i.e., web servers, blockchains, DHTs, trust registries, etc. We propose to call this a **DID host**. 
@@ -52,13 +52,13 @@ With `did:scid`, Bluesky’s requirements could be met if Bluesky implemented th
 
 In other words, a `did:scid` DID can still be 100% portable—the owner can move it anywhere they want any time they want and keep their full verification metadata—BUT if they want to use it with Bluesky, the owner must agree to let Bluesky host at least one copy of their verification metadata on Bluesky’s DID host.
 
-That way Bluesky can have its cake and eat it too. A `did:scid` DID can meet all both of these requirements:
+That way Bluesky can have its cake and eat it too. A `did:scid` DID can meet both of these requirements:
 
 1.  DIDs are permanent and immutable account identifiers.
 
-2.  Resolution should not require additional state or context, and "new" resolvers can independently resolve all "old" identifiers”.
+2.  Resolution should not require additional state or context, and "new" resolvers can independently resolve all "old" identifiers.
 
-For Bluesky, there would always a known context—the verification metadata for the `did:scid` DID on their own DID host. Even better, Bluesky can completely control the performance, redundancy, scalability, etc. of that resolution option. At the same time, the `did:scid` DID controller still has a fully portable DID they can take to any other DID host anywhere anytime.
+For Bluesky, there would always be a known context—the verification metadata for the `did:scid` DID on their own DID host. Even better, Bluesky can completely control the performance, redundancy, scalability, etc. of that resolution option. At the same time, the `did:scid` DID controller still has a fully portable DID they can take to any other DID host anywhere anytime.
 
 This policy also works for any service provider who shares Bluesky’s requirements. In other words, if a service provider wants to be able to “always resolve” a `did:scid` DID regardless of what other DID hosts the DID controller currently uses, the site can make it part of their terms-of-service that the DID controller must publish their verification metadata to that service provider’s designated DID host.
 
@@ -70,7 +70,7 @@ This policy also enables service providers to avoid duplicity issues. The servic
 
 One of the benefits of `did:scid` is that the verification metadata may be stored on multiple different types of technical infrastructure, including blockchains. A blockchain is an excellent tool for storing the verification metadata due to its immutable nature, tamper-resistance and high availability. 
 
-As such, this section shows how to use the [*cheqd*](https://cheqd.io/) blockchain as a **DID host**, based on the description in Appendix B. 
+As such, this section shows how to use the [*cheqd*](https://cheqd.io/) blockchain as a **DID host**, based on the description in [Appendix C](#appendix-c%3A-did-hosts). 
 
 Through the use of cheqd’s [*DID-Linked Resource*](https://w3c-ccg.github.io/DID-Linked-Resources/) functionality, cheqd is able to store **sequentially ordered, indexable and historically queryable JSON files** that are both cryptographically verifiable and tamper-resistant. 
 

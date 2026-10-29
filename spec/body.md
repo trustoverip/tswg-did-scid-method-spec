@@ -1,10 +1,10 @@
 ## Why another DID method?
 
-Given that nearly 200 different DID methods have been registered with the [W3C DID Methods Registry](https://www.w3.org/TR/did-extensions-methods/), it begs the question, “Why another DID method”. There are three main reasons.
+Given that nearly 200 different DID methods have been registered with the [W3C DID Methods Registry](https://www.w3.org/TR/did-extensions-methods/), it begs the question, “Why another DID method?” There are three main reasons.
 
 ### \#1: Self-Certifying Identifiers (SCIDs)
 
-Because a SCID is is cryptographically bound to the cryptographic keys from which it was generated, it does not require reliance on a third party for verification. The only requirement to verify the binding is access to the **verification metadata** (the DID document and the key event history). Note that, if a SCID is used in peer-to-peer relationship, the verification metadata can be stored locally by each peer.
+Because a SCID is cryptographically bound to the cryptographic keys from which it was generated, it does not require reliance on a third party for verification. The only requirement to verify the binding is access to the **verification metadata** (the DID document and the key event history). Note that, if a SCID is used in a peer-to-peer relationship, the verification metadata can be stored locally by each peer.
 
 ### \#2: Portability and Location Independence
 
@@ -36,7 +36,7 @@ Several newer SCID-based DID methods now support a full range of DID features in
 
 - [did:plc](https://github.com/did-method-plc/did-method-plc) (used by [Bluesky](https://bsky.app/))
 
-`did:webs` and `did:webvh` are web-based DID methods where the DID is bound to the location of a specific web server. While some degree of portability is still possible by using the DID document `alsoKnownAs` property to establish synonyms with other DIDs, this design does not support the requirement for the DID alone be able to serve as a permanent immutable account identifier (for more about this requirement, see [*Appendix B*](#appendix-b%3A-bluesky-did-requirements)).
+`did:webs` and `did:webvh` are web-based DID methods where the DID is bound to the location of a specific web server. While some degree of portability is still possible by using the DID document `alsoKnownAs` property to establish synonyms with other DIDs, this design does not support the requirement for the DID alone to be able to serve as a permanent immutable account identifier (for more about this requirement, see [*Appendix B*](#appendix-b%3A-bluesky-did-requirements)).
 
 `did:jlinc` is now being adapted for use with a federated network of servers to increase portability. However it is not currently designed for peer-to-peer usage.
 
@@ -54,7 +54,7 @@ The first two sets of examples in this section are based on the SCIDs and verifi
 
 Examples in this section are based on [*the current specification for the did:webvh method*](https://identity.foundation/didwebvh/).
 
-The first example is a “pure” `did:scid `DID because it does not include any location parameter. This is the format used in peer-to-peer exchange where the location information is implicit for both peers.
+The first example is a “pure” `did:scid` DID because it does not include any location parameter. This is the format used in peer-to-peer exchange where the location information is implicit for both peers.
 
 `did:scid:vh:1:QmfGEUAcMpzo25kF2Rhn8L5FAXysfGnkzjwdKoNPi615XQ`
 
@@ -92,8 +92,7 @@ The next three `did:scid:ke` URLs show where the DID document and the KERI event
 
 `did:scid:ke:3:EKYGGh-FtAphGmSZbsuBs_t4qpsjYJ2ZqvMKluq9OxmP?src=my.name.me`
 
-`did:scid:ke:3:EKYGGh-FtAphGmSZbsuBs_t4qpsjYJ2ZqvMKluq9OxmP?src=did.company.info/`  
-`employee/abc`
+`did:scid:ke:3:EKYGGh-FtAphGmSZbsuBs_t4qpsjYJ2ZqvMKluq9OxmP?src=did.company.info/employee/abc`
 
 The final example shows how a `did:scid:ke` DID could store its verification metadata on the [cheqd](https://cheqd.io/) blockchain (again, assuming a modified version of the [cheqd DID method](https://docs.cheqd.io/product/architecture/adr-list/adr-001-cheqd-did-method) that supports `did:scid` DIDs as described above):
 
@@ -133,7 +132,7 @@ The design of `did:scid` separates the SCID from the verification metadata locat
 
 ### did:scid
 
-A `did:scid` consists of five colon-delimited segments as summarized in table 1:
+A `did:scid` consists of five colon-delimited segments as summarized in Table 1:
 
 | \# | Segment | Purpose |
 |----|----|----|
