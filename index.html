@@ -109,7 +109,7 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
       ],
       "source": "xref",
       "termId": "term:credential",
-      "lastUpdated": "2026-10-29T16:54:58.765Z"
+      "lastUpdated": "2026-10-29T17:12:18.467Z"
     }
   ]
 };</script>
@@ -318,7 +318,7 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
                     </div>
                     <nav id="toc" class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto"
                         aria-labelledby="sidebarMenuLabel">
-                        <ul class="toc"><li><a href="#introduction">Introduction</a></li><li><a href="#requirements-language">Requirements Language</a></li><li><a href="#terminology">Terminology</a></li><li><a href="#%7B%7Bfirst-level-section-name%7D%7D">{{First Level Section Name}}</a><ul><li><a href="#%7B%7Bsecond-level-section-name%7D%7D">{{Second Level Section Name}}</a><ul><li><a href="#%7B%7Bthird-level-section-name%7D%7D">{{Third Level Section Name}}</a></li></ul></li></ul></li><li><a href="#security-considerations">Security Considerations</a></li><li><a href="#privacy-considerations">Privacy Considerations</a></li><li><a href="#governance-considerations">Governance Considerations</a></li><li><a href="#internationalization-considerations">Internationalization Considerations</a></li><li><a href="#accessibility-considerations">Accessibility Considerations</a></li><li><a href="#conformance">Conformance</a><ul><li><a href="#conformance-targets">Conformance Targets</a></li><li><a href="#conformance-tests">Conformance Tests</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#normative-references">Normative References</a></li><li><a href="#informative-references">Informative References</a></li></ul></li><li><a href="#appendices">Appendices</a><ul><li><a href="#appendix-a%3A-%7B%7Bname%7D%7D">Appendix A: {{Name}}</a></li><li><a href="#appendix-b%3A-%7B%7Bname%7D%7D">Appendix B: {{Name}}</a></li><li><a href="#appendix-c%3A-acknowledgements">Appendix C: Acknowledgements</a></li></ul></li></ul>
+                        <ul class="toc"><li><a href="#introduction">Introduction</a></li><li><a href="#requirements-language">Requirements Language</a></li><li><a href="#terminology">Terminology</a></li><li><a href="#why-another-did-method%3F">Why another DID method?</a><ul><li><a href="#%231%3A-self-certifying-identifiers-(scids)">#1: Self-Certifying Identifiers (SCIDs)</a></li><li><a href="#%232%3A-portability-and-location-independence">#2: Portability and Location Independence</a></li><li><a href="#%233%3A-privacy-and-security">#3: Privacy and Security</a></li></ul></li><li><a href="#why-support-multiple-formats%3F">Why support multiple formats?</a></li><li><a href="#examples">Examples</a><ul><li><a href="#did%3Ascid-webvh-example">did:scid Webvh Example</a></li><li><a href="#did%3Ascid-webs-example">did:scid WebS Example</a></li><li><a href="#did%3Ascid-peer-example">did:scid Peer Example</a></li></ul></li><li><a href="#requirements">Requirements</a></li><li><a href="#syntax">Syntax</a><ul><li><a href="#did%3Ascid">did:scid</a></li><li><a href="#did%3Ascid-url">did:scid URL</a></li></ul></li><li><a href="#the-src-(%E2%80%9Csource%E2%80%9D)-parameter">The src (“source”) parameter</a><ul><li><a href="#absolute-or-relative-url">Absolute or relative URL</a></li><li><a href="#did-method">DID method</a></li></ul></li><li><a href="#alsoknownas-property">alsoKnownAs property</a></li><li><a href="#did%3Ascid-formats">did:scid formats</a><ul><li><a href="#did%3Ascid-format-specifications">did:scid format specifications</a></li><li><a href="#did%3Ascid-format-names">did:scid format names</a></li><li><a href="#did%3Ascid-format-version-identifiers">did:scid format version identifiers</a></li></ul></li><li><a href="#security-considerations">Security Considerations</a></li><li><a href="#privacy-considerations">Privacy Considerations</a></li><li><a href="#governance-considerations">Governance Considerations</a></li><li><a href="#internationalization-considerations">Internationalization Considerations</a></li><li><a href="#accessibility-considerations">Accessibility Considerations</a></li><li><a href="#conformance">Conformance</a><ul><li><a href="#conformance-targets">Conformance Targets</a></li><li><a href="#conformance-tests">Conformance Tests</a></li></ul></li><li><a href="#references">References</a><ul><li><a href="#normative-references">Normative References</a></li><li><a href="#informative-references">Informative References</a></li></ul></li><li><a href="#appendices">Appendices</a><ul><li><a href="#appendix-a%3A-did%3Ascid-method-type-registry">Appendix A: did:scid Method Type Registry</a></li><li><a href="#appendix-b%3A-bluesky-did-requirements">Appendix B: Bluesky DID Requirements</a></li><li><a href="#appendix-c%3A-did-hosts">Appendix C: DID Hosts</a></li><li><a href="#appendix-d%3A-blockchain-support-using-did%3Acheqd">Appendix D: Blockchain support using did:cheqd</a></li><li><a href="#appendix-e%3A-acknowledgements">Appendix E: Acknowledgements</a></li></ul></li></ul>
                         <div class="spec-footer mt-3">
                             <a class="mx-auto p-2" href="https://github.com/trustoverip/spec-up-t"
                                 target="_blank" rel="noopener noreferrer">Powered By Spec-Up-T
@@ -334,13 +334,15 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
                     <p>{{INSTRUCTIONS ABOUT THE USE OF THIS TEMPLATE: All editorial instructions are enclosed in {{double curly braces}} and MUST be either removed from or replaced in the specification document. All other text MUST be included in the specification document. NOTE: As of 2026, ToIP specifications are required to use <a href="https://trustoverip.github.io/spec-up-t-website/">Spec-Up-T</a>. It will automatically generate a table of contents for the entire specification document.}}</p>
 <h1 id="did-scid-method-specification" tabindex="-1"><a class="toc-anchor d-print-none" href="#did-scid-method-specification">§</a> DID SCID Method Specification</h1>
 <p><em>Version:</em> {{MUST be in X.X or X.XX format}}<br>
-<em>Document Status:</em> {{MUST be one of: Working Draft, Working Group Approved Deliverable, ToIP Approved Deliverable}}<br>
+<em>Document Status:</em> Working Draft
 <em>DOI:</em> {{see <a href="https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/767787009/ToIP+Approved+Deliverable+Process#Persistent-DOI-Link">this wiki page</a> for instructions about how to add a DOI}}<br>
 <em>GitHub:</em> <a href="https://github.com/trustoverip/tswg-did-scid-method-spec">https://github.com/trustoverip/tswg-did-scid-method-spec</a></p>
 <p><em>Editors:</em> {{MUST list the full names, optional OrcID and official LF affiliations of each editor.}}</p>
 <ul>
-<li>{{Editor 1, Org A}}</li>
-<li>{{Editor 2, Org B}}</li>
+<li>Drummond Reed, {{Org}}</li>
+<li>Markus Sabadello, {{Org}}</li>
+<li>Jonathan Rayback, {{Org}}</li>
+<li>Alex Tweeddale, {{Org}}</li>
 </ul>
 <p><em>Contributors:</em> {{MUST list the full names and official LF affiliations of each substantial contributor — all other acknowledgements go in the Acknowledgements Appendix at the end.}}</p>
 <ul>
@@ -358,7 +360,12 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
 <p>THESE MATERIALS ARE PROVIDED “AS IS.” The parties expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the materials. The entire risk as to implementing or otherwise using the materials is assumed by the implementer and user. IN NO EVENT WILL THE PARTIES BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS DELIVERABLE OR ITS GOVERNING AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER MEMBER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 <!-- file: intro.md -->
 <h2 id="introduction" tabindex="-1"><a class="toc-anchor d-print-none" href="#introduction">§</a> Introduction</h2>
-<p>{{REQUIRED. This is the first numbered section and SHALL be written so a layperson can quickly get an overview of the purpose and structure of the specification.}}</p>
+<p><code>did:scid</code> is a new DID method designed to maximize the security, privacy, and portability benefits of self-certifying identifiers (SCIDs). Here is the definition of a SCID in the <a href="https://glossary.trustoverip.org/"><em>ToIP Glossary</em></a>:</p>
+<p><em>A subclass of</em> <a href="https://glossary.trustoverip.org/#term:verifiable-identifier"><strong>verifiable identifier</strong></a> <em>(VID) that is</em> <a href="https://glossary.trustoverip.org/#term:cryptographically-verifiable"><strong>cryptographically verifiable</strong></a> <em>without the need to rely on any</em> <a href="https://glossary.trustoverip.org/#term:third-party"><strong>third party</strong></a> <em>for</em> <a href="https://glossary.trustoverip.org/#term:verification"><strong>verification</strong></a> <em>because the</em> <a href="https://glossary.trustoverip.org/#term:identifier"><strong>identifier</strong></a> <em>is cryptographically bound to the</em> <a href="https://glossary.trustoverip.org/#term:cryptographic-keys"><strong>cryptographic keys</strong></a> <em>from which it was generated.</em></p>
+<p>By this definition, a SCID does not necessarily need to be a decentralized identifier (DID) as defined by the <a href="https://www.w3.org/TR/did-core/"><em>W3C Decentralized Identifiers (DIDs) 1.0</em></a> specification. However, there are many advantages to defining <strong>a DID method devoted exclusively to SCIDs, independent of the specific type of SCID</strong>.</p>
+<p>That is the purpose of the <code>did:scid</code> method which is a deliverable of the <a href="https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/94437377/DID+SCID+Task+Force+DSTF">ToIP DID SCID Task Force</a>.</p>
+<div id="note-1" class="notice note"><a class="notice-link" href="#note-1">NOTE</a><p><code>did:scid</code> is technically a DID method specification because it defines a DID method namespace. However it is a <strong>metamethod</strong> because it defines a standard set of capabilities for other SCID-based DID methods called <strong>source DID methods</strong>. Each source DID method defines a <code>did:scid</code> <strong>format</strong>. Resolution and verification of a <code>did:scid</code> DID is designed to use the resolution and verification code of the source DID method as described in the <a href="https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/131858449/DID+SCID+Resolution+Overview">DID SCID Resolution Overview</a>.</p>
+</div>
 <h2 id="requirements-language" tabindex="-1"><a class="toc-anchor d-print-none" href="#requirements-language">§</a> Requirements Language</h2>
 <p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in <a href="https://datatracker.ietf.org/doc/html/rfc2119">IETF RFC 2119</a>.</p>
 <!-- file: terms-and-definitions-intro.md -->
@@ -385,18 +392,278 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
 <!-- file: terms-definitions/verifiable_trust_community.md -->
 
 <!-- file: body.md -->
-<h2 id="%7B%7Bfirst-level-section-name%7D%7D" tabindex="-1"><a class="toc-anchor d-print-none" href="#%7B%7Bfirst-level-section-name%7D%7D">§</a> {{First Level Section Name}}</h2>
-<p>{{Every top-level section MUST include exactly one of the following two sentences immediately after the section header:
-This section is normative.
-This section is informative.
-The first sentence MUST be used if the section contains any normative requirements expressed using RFC keywords. The second sentence MUST be used if the section does NOT contain any normative requirements (and therefore MUST NOT contain any RFC keywords). As a general best practice, all normative sections SHOULD be grouped together.}}</p>
-<p>{{Each new section or subsection SHOULD begin with at least a sentence or paragraph introducing the purpose of that section.}}</p>
-<h3 id="%7B%7Bsecond-level-section-name%7D%7D" tabindex="-1"><a class="toc-anchor d-print-none" href="#%7B%7Bsecond-level-section-name%7D%7D">§</a> {{Second Level Section Name}}</h3>
-<p>{{Each new section or subsection SHOULD always begin with at least a sentence or paragraph introducing the purpose of that section.}}</p>
-<h4 id="%7B%7Bthird-level-section-name%7D%7D" tabindex="-1"><a class="toc-anchor d-print-none" href="#%7B%7Bthird-level-section-name%7D%7D">§</a> {{Third Level Section Name}}</h4>
-<p>{{Each new section or subsection SHOULD always begin with at least a sentence or paragraph introducing the purpose of that section.}}</p>
-<p>{{A bit about the <a class="term-reference" href="#term:vtc">VTC</a> for your info… (just showing an example glossary reference here in the text)}}</p>
-<p>{{When nesting sections it is RECOMMENDED to go no more than three levels deep. Use as many sections as is necessary to cover all the requirements of the specification, but keep the text and diagrams as concise as possible. <a href="https://www.ietf.org/archive/id/draft-flanagan-7322bis-07.html#name-body-of-the-memo">See this IETF guidance</a>.}}</p>
+<h2 id="why-another-did-method%3F" tabindex="-1"><a class="toc-anchor d-print-none" href="#why-another-did-method%3F">§</a> Why another DID method?</h2>
+<p>Given that nearly 200 different DID methods have been registered with the <a href="https://www.w3.org/TR/did-extensions-methods/">W3C DID Methods Registry</a>, it begs the question, “Why another DID method?” There are three main reasons.</p>
+<h3 id="%231%3A-self-certifying-identifiers-(scids)" tabindex="-1"><a class="toc-anchor d-print-none" href="#%231%3A-self-certifying-identifiers-(scids)">§</a> #1: Self-Certifying Identifiers (SCIDs)</h3>
+<p>Because a SCID is cryptographically bound to the cryptographic keys from which it was generated, it does not require reliance on a third party for verification. The only requirement to verify the binding is access to the <strong>verification metadata</strong> (the DID document and the key event history). Note that, if a SCID is used in a peer-to-peer relationship, the verification metadata can be stored locally by each peer.</p>
+<h3 id="%232%3A-portability-and-location-independence" tabindex="-1"><a class="toc-anchor d-print-none" href="#%232%3A-portability-and-location-independence">§</a> #2: Portability and Location Independence</h3>
+<p>Because a SCID is bound directly to its verification metadata, the SCID is fully portable, meaning it is not bound to any particular location for the verification metadata. For example, a <code>did:scid</code> DID can be used peer-to-peer, with a web server, with a blockchain, or any other storage target. The verification metadata can even be written to multiple locations to increase resilience—a technique called <strong>multi-anchoring</strong>. Any type of repository can be used to store the verification metadata: web servers, blockchains, trust registries, databases, file systems, etc.</p>
+<h3 id="%233%3A-privacy-and-security" tabindex="-1"><a class="toc-anchor d-print-none" href="#%233%3A-privacy-and-security">§</a> #3: Privacy and Security</h3>
+<p>Because the cryptographic binding between the SCID and the verification metadata can be generated entirely within a digital wallet, secure element, or HSM, the generation phase can be both very secure and very private. This means SCIDs can work equally well for public DIDs and private DIDs.</p>
+<p>SCIDs can further improve privacy for individuals because they are lightweight enough to support pairwise private DID connections. This enables DID applications used by individuals to automatically use pairwise pseudonyms and encrypted private channels for communications.</p>
+<p>SCIDs can further improve security because:</p>
+<ul>
+<li>
+<p>Each new version of the verification metadata (e.g., DID document and key event history) can include a hash of the previous version. By digitally signing the new version, this forms a <strong>cryptographic event log</strong>, also known as a <strong>hashchain</strong> or <strong>microledger</strong>.</p>
+</li>
+<li>
+<p>Storing the verification metadata in multiple locations—multi-anchoring—can make it harder to attack, particularly if SCIDs are used in conjunction with the ToIP <a href="https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/32473104/High+Assurance+VID+Task+Force+HAVID"><em>High Assurance VIDs Specification</em></a>.</p>
+</li>
+</ul>
+<h2 id="why-support-multiple-formats%3F" tabindex="-1"><a class="toc-anchor d-print-none" href="#why-support-multiple-formats%3F">§</a> Why support multiple formats?</h2>
+<p>The advantages of SCIDs have led to the development of multiple SCID-based DID methods. The first one, <a href="https://identity.foundation/peer-did-method-spec/"><em>did:peer</em></a>, is still the default DID method used in <a href="https://identity.foundation/didcomm-messaging/spec/v2.0/">DIDComm</a>. However, <code>did:peer</code> assumes peer-to-peer usage, and thus does not include a mechanism for discovery of the location of verification metadata—a requirement for most publicly-verifiable DIDs. <code>did:peer</code> also does not support key rotation.</p>
+<p>Several newer SCID-based DID methods now support a full range of DID features including key rotation, pre-rotation, and multi-sig. These include:</p>
+<ul>
+<li>
+<p><a href="https://trustoverip.github.io/tswg-did-method-webs-specification/"><em>did:webs</em></a> (based on <a href="https://weboftrust.github.io/WOT-terms/docs/glossary/autonomic-identifier?level=2">KERI AIDs</a>)</p>
+</li>
+<li>
+<p><a href="https://didwebvh.info/"><em>did:webvh</em></a></p>
+</li>
+<li>
+<p><a href="https://did-spec.jlinc.org/">did:jlinc</a> (also being used by <a href="https://fedid.me/about/fedid-did-document">FedID</a>)</p>
+</li>
+<li>
+<p><a href="https://github.com/did-method-plc/did-method-plc">did:plc</a> (used by <a href="https://bsky.app/">Bluesky</a>)</p>
+</li>
+</ul>
+<p><code>did:webs</code> and <code>did:webvh</code> are web-based DID methods where the DID is bound to the location of a specific web server. While some degree of portability is still possible by using the DID document <code>alsoKnownAs</code> property to establish synonyms with other DIDs, this design does not support the requirement for the DID alone to be able to serve as a permanent immutable account identifier (for more about this requirement, see <a href="#appendix-b%3A-bluesky-did-requirements"><em>Appendix B</em></a>).</p>
+<p><code>did:jlinc</code> is now being adapted for use with a federated network of servers to increase portability. However it is not currently designed for peer-to-peer usage.</p>
+<p><code>did:plc</code> uses SCIDs but in its current implementation uses a centralized directory service operated by Bluesky.</p>
+<p><code>did:scid</code> can address all of these limitations <em>without requiring new formats for SCIDs or SCID verification metadata</em>. It can reuse the formats listed above. While in theory <code>did:scid</code> could choose to support only one of these formats, picking one would discriminate against the others. Since all these formats have their adherents—and existing code bases that support them—<code>did:scid</code> is designed to support any of them, and be extensible to support other SCID-based formats <em>if necessary</em>. This enables adopters to choose the SCID format that works best for them, and for these formats to evolve over time.</p>
+<h2 id="examples" tabindex="-1"><a class="toc-anchor d-print-none" href="#examples">§</a> Examples</h2>
+<div id="note-2" class="notice note"><a class="notice-link" href="#note-2">NOTE</a><p>The first two sets of examples in this section are based on the SCIDs and verification metadata formats defined by the <code>did:webvh</code> and <code>did:webs</code> methods, both of which are web-based DID methods. While <code>did:scid</code> supports storing verification metadata on a web server, it is not strictly a web-based DID method because: a) it does not include any web location information in the DID itself (only in a <code>did:scid</code> URL parameter), and b) <code>did:scid</code> supports storing verification metadata in other locations, including blockchains, DHTs, and local storage in peer-to-peer usages.</p>
+</div>
+<h3 id="did%3Ascid-webvh-example" tabindex="-1"><a class="toc-anchor d-print-none" href="#did%3Ascid-webvh-example">§</a> did:scid Webvh Example</h3>
+<p>Examples in this section are based on <a href="https://identity.foundation/didwebvh/"><em>the current specification for the did:webvh method</em></a>.</p>
+<p>The first example is a “pure” <code>did:scid</code> DID because it does not include any location parameter. This is the format used in peer-to-peer exchange where the location information is implicit for both peers.</p>
+<p><code>did:scid:vh:1:QmfGEUAcMpzo25kF2Rhn8L5FAXysfGnkzjwdKoNPi615XQ</code></p>
+<p>The next three examples are <code>did:scid</code> URLs showing three different web servers where the verifiable history may be retrieved as specified by the <a href="https://identity.foundation/didwebvh/"><em>did:webvh method</em></a>.</p>
+<p><code>did:scid:vh:1:QmfGEUAcMpzo25kF2Rhn8L5FAXysfGnkzjwdKoNPi615XQ?src=example.com/allan</code></p>
+<p><code>did:scid:vh:1:QmfGEUAcMpzo25kF2Rhn8L5FAXysfGnkzjwdKoNPi615XQ?src=my.name.me</code></p>
+<p><code>did:scid:vh:1:QmfGEUAcMpzo25kF2Rhn8L5FAXysfGnkzjwdKoNPi615XQ?src=did.company.info/employee/abc</code></p>
+<p>The final example is a <code>did:scid</code> URL that shows how the verification metadata could also be retrieved via another DID method that uses a blockchain.</p>
+<div id="warning-1" class="notice warning"><a class="notice-link" href="#warning-1">WARNING</a><p>IMPORTANT: This example illustrates that a blockchain-based DID method <em>could</em> be modified to support <code>did:scid</code> DIDs by specifying:</p>
+<ol>
+<li>
+<p>How the DID controller can store <code>did:scid</code> verification metadata on the blockchain.</p>
+</li>
+<li>
+<p>How a DID resolver can use the <code>did:scid</code> DID to look up and retrieve the verification metadata from the blockchain using <a href="https://w3c-ccg.github.io/DID-Linked-Resources/">DID Linked Resources</a>. See the <a href="https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/131858449/DID+SCID+Resolution+Overview">DID SCID Resolution Overview</a> for more.</p>
+</li>
+</ol>
+</div>
+<p>This example uses a hypothetical modified version of the <a href="https://docs.cheqd.io/product/architecture/adr-list/adr-001-cheqd-did-method">cheqd DID method</a> that specifies: 1) how the <code>did:scid</code> DID could be used as the <code>unique-id</code> component of a <code>did:cheqd</code> DID, and 2) how to retrieve the <code>did:scid</code> DID verification metadata from the <a href="https://cheqd.io/">cheqd</a> blockchain.</p>
+<p><code>did:scid:vh:1:QmfGEUAcMpzo25kF2Rhn8L5FAXysfGnkzjwdKoNPi615XQ?src=did:cheqd:testnet</code></p>
+<h3 id="did%3Ascid-webs-example" tabindex="-1"><a class="toc-anchor d-print-none" href="#did%3Ascid-webs-example">§</a> did:scid WebS Example</h3>
+<p>These are the same five examples as above except they use the (hypothetical) version 3 of the KERI AID specification. The first example shows how a <code>did:scid:ke</code> DID would be used in peer-to-peer mode where the location of the verification metadata is implicit.</p>
+<p><code>did:scid:ke:3:EKYGGh-FtAphGmSZbsuBs_t4qpsjYJ2ZqvMKluq9OxmP</code></p>
+<p>The next three <code>did:scid:ke</code> URLs show where the DID document and the KERI event stream may be found on a web server as defined by the <a href="https://trustoverip.github.io/tswg-did-method-webs-specification"><em>did:webs specification</em></a>.</p>
+<p><code>did:scid:ke:3:EKYGGh-FtAphGmSZbsuBs_t4qpsjYJ2ZqvMKluq9OxmP?src=example.com/allan</code></p>
+<p><code>did:scid:ke:3:EKYGGh-FtAphGmSZbsuBs_t4qpsjYJ2ZqvMKluq9OxmP?src=my.name.me</code></p>
+<p><code>did:scid:ke:3:EKYGGh-FtAphGmSZbsuBs_t4qpsjYJ2ZqvMKluq9OxmP?src=did.company.info/employee/abc</code></p>
+<p>The final example shows how a <code>did:scid:ke</code> DID could store its verification metadata on the <a href="https://cheqd.io/">cheqd</a> blockchain (again, assuming a modified version of the <a href="https://docs.cheqd.io/product/architecture/adr-list/adr-001-cheqd-did-method">cheqd DID method</a> that supports <code>did:scid</code> DIDs as described above):</p>
+<p><code>did:scid:ke:3:EKYGGh-FtAphGmSZbsuBs_t4qpsjYJ2ZqvMKluq9OxmP?src=did:cheqd:testnet</code></p>
+<h3 id="did%3Ascid-peer-example" tabindex="-1"><a class="toc-anchor d-print-none" href="#did%3Ascid-peer-example">§</a> did:scid Peer Example</h3>
+<div id="note-3" class="notice note"><a class="notice-link" href="#note-3">NOTE</a><p>This example is intended to show how a peer-to-peer DID method such as <code>did:peer</code> could be used as a <code>did:scid</code> method format. However, creation of a <code>did:scid:pr</code> method is NOT proposed because both of the previous examples (<code>did:scid:vh</code> and <code>did:scid:ke</code>) can also be used peer-to-peer and both support key rotation and other security features not currently included in <code>did:peer</code>.</p>
+</div>
+<p>This example uses variant #2 of the <code>did:peer</code> <a href="https://identity.foundation/peer-did-method-spec/"><em>method</em></a>. As with the first two examples above, <code>did:peer</code> assumes local storage, so there is no need for the <code>src</code> parameter.</p>
+<p><code>did:scid:pr:2:2.Vz6Mkj3PUd1WjvaDhNZhhhXQdz5UnZXmS7ehtx8bsPpD47kKc.Ez6LSg8zQom395jKLrGiBNruB9MM6V8PWuf2FpEy4uRFiqQBR.SeyJ0IjoiZG0iLCJzIjp7InVyaSI6Imh0dHA6Ly9leGFtcGxlLmNvbS9kaWRjb21tIiwiYSI6WyJkaWRjb21tL3YyIl0sInIiOlsiZGlkOmV4YW1wbGU6MTIzNDU2Nzg5YWJjZGVmZ2hpI2tleS0xIl19fQ.SeyJ0IjoiZG0iLCJzIjp7InVyaSI6Imh0dHA6Ly9leGFtcGxlLmNvbS9hbm90aGVyIiwiYSI6WyJkaWRjb21tL3YyIl0sInIiOlsiZGlkOmV4YW1wbGU6MTIzNDU2Nzg5YWJjZGVmZ2hpI2tleS0yIl19fQ</code></p>
+<h2 id="requirements" tabindex="-1"><a class="toc-anchor d-print-none" href="#requirements">§</a> Requirements</h2>
+<ol>
+<li>
+<p>A <code>did:scid</code> DID MUST be a self-certifying identifier (SCID) that is fully cryptographically verifiable using only the verification metadata (which may be any combination of DID documents and other verification files).</p>
+</li>
+<li>
+<p>A <code>did:scid</code> DID MUST be able to serve as a permanent immutable account identifier, i.e., it must not need to change if the DID controller changes the location of the verification metadata.</p>
+</li>
+<li>
+<p>A <code>did:scid</code> DID MUST be fully portable, i.e., the DID controller must be able to:</p>
+<ol>
+<li>
+<p>Choose the location(s) for the verifiable history (subject to policy constraints that may be imposed by a relying party).</p>
+</li>
+<li>
+<p>Continue using the <code>did:scid</code> DID even if the location of the verification metadata changes.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>A <code>did:scid</code> DID MUST be able to support storing the verification metadata in multiple locations (“multi-anchoring”).</p>
+</li>
+<li>
+<p>A <code>did:scid</code> DID MUST meet all the other requirements of a DID as specified in <a href="https://www.w3.org/TR/did-core/"><em>W3C Decentralized Identifiers (DIDs) 1.0</em></a>.</p>
+</li>
+</ol>
+<h2 id="syntax" tabindex="-1"><a class="toc-anchor d-print-none" href="#syntax">§</a> Syntax</h2>
+<p><em>This section is normative.</em></p>
+<p>The design of <code>did:scid</code> separates the SCID from the verification metadata location. The DID is a “pure SCID” that will never need to change. The verification metadata location is conveyed in a standard query parameter of a <code>did:scid</code> URL.</p>
+<h3 id="did%3Ascid" tabindex="-1"><a class="toc-anchor d-print-none" href="#did%3Ascid">§</a> did:scid</h3>
+<p>A <code>did:scid</code> consists of five colon-delimited segments as summarized in Table 1:</p>
+<div class="table-responsive-md"><table class="table table-striped table-bordered table-hover">
+<thead>
+<tr>
+<th>#</th>
+<th>Segment</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>did</td>
+<td>URI scheme as required by <a href="https://www.w3.org/TR/did-core/"><em>W3C DID 1.0</em></a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>scid</td>
+<td>DID method name</td>
+</tr>
+<tr>
+<td>3</td>
+<td>format-name</td>
+<td>Short name identifying the format</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ver</td>
+<td>Format version</td>
+</tr>
+<tr>
+<td>5</td>
+<td>method-specific-id</td>
+<td>SCID value</td>
+</tr>
+</tbody>
+</table>
+</div><p>A <code>did:scid</code> MUST conform to the following ABNF (most of which is identical to <a href="https://www.w3.org/TR/did-core/#did-syntax"><em>section 3.1</em></a> of W3C Decentralized Identifiers 1.0):</p>
+<pre><code class="language-abnf"><span class="token definition keyword">did-scid</span>           <span class="token operator">=</span> <span class="token string">"did:scid:"</span> <span class="token rule">format-name</span> <span class="token string">":"</span> <span class="token rule">ver</span> <span class="token string">":"</span> <span class="token rule">method-specific-id</span>
+<span class="token definition keyword">format-name</span>        <span class="token operator">=</span> <span class="token repetition operator">1*</span><span class="token rule">format-char</span>
+<span class="token definition keyword">format-char</span>        <span class="token operator">=</span> <span class="token range number">%x61-7A</span> <span class="token operator">/</span> <span class="token core-rule rule constant">DIGIT</span>
+<span class="token definition keyword">ver</span>                <span class="token operator">=</span> <span class="token repetition operator">1*</span><span class="token core-rule rule constant">DIGIT</span>
+<span class="token definition keyword">method-specific-id</span> <span class="token operator">=</span> <span class="token repetition operator">*</span><span class="token punctuation">(</span> <span class="token repetition operator">*</span><span class="token rule">idchar</span> <span class="token string">":"</span> <span class="token punctuation">)</span> <span class="token repetition operator">1*</span><span class="token rule">idchar</span>
+<span class="token definition keyword">idchar</span>             <span class="token operator">=</span> <span class="token core-rule rule constant">ALPHA</span> <span class="token operator">/</span> <span class="token core-rule rule constant">DIGIT</span> <span class="token operator">/</span> <span class="token string">"."</span> <span class="token operator">/</span> <span class="token string">"-"</span> <span class="token operator">/</span> <span class="token string">"_"</span> <span class="token operator">/</span> <span class="token rule">pct-encoded</span>
+<span class="token definition keyword">pct-encoded</span>        <span class="token operator">=</span> <span class="token string">"%"</span> <span class="token core-rule rule constant">HEXDIG</span> <span class="token core-rule rule constant">HEXDIG</span>
+</code></pre>
+<p>The value of the <code>method-specific-id</code> component MUST be a self-certifying identifier whose binding to the verification metadata is cryptographically verifiable using only the verification metadata.</p>
+<h3 id="did%3Ascid-url" tabindex="-1"><a class="toc-anchor d-print-none" href="#did%3Ascid-url">§</a> did:scid URL</h3>
+<p>A <code>did:scid</code> URL MUST conform to the following ABNF:</p>
+<pre><code class="language-abnf"><span class="token definition keyword">did-scid-URL</span> <span class="token operator">=</span> <span class="token rule">did-scid</span> <span class="token rule">path-abempty</span> <span class="token punctuation">[</span> <span class="token string">"?"</span> <span class="token punctuation">[</span> <span class="token string">"src="</span> <span class="token rule">source</span> <span class="token punctuation">]</span> <span class="token rule">query</span> <span class="token punctuation">]</span>
+               <span class="token punctuation">[</span> <span class="token string">"#"</span> <span class="token rule">fragment</span> <span class="token punctuation">]</span>
+<span class="token definition keyword">source</span> <span class="token operator">=</span> <span class="token repetition operator">1*</span><span class="token punctuation">(</span> <span class="token rule">pchar</span> <span class="token operator">/</span> <span class="token string">"/"</span> <span class="token operator">/</span> <span class="token string">"?"</span> <span class="token punctuation">)</span>
+</code></pre>
+<p>Any ABNF rules that are not defined above are defined in <a href="https://datatracker.ietf.org/doc/html/rfc3986"><em>RFC 3986</em></a>.</p>
+<p>With this ABNF, the only difference between a <code>did:scid</code> URL and a standard DID URL is that a <code>did:scid</code> URL takes an optional query parameter called <code>src</code> (for “source”).</p>
+<h2 id="the-src-(%E2%80%9Csource%E2%80%9D)-parameter" tabindex="-1"><a class="toc-anchor d-print-none" href="#the-src-(%E2%80%9Csource%E2%80%9D)-parameter">§</a> The src (“source”) parameter</h2>
+<p><em>This section is normative.</em></p>
+<p>The purpose of the src parameter is to supply the location information a DID resolver needs to locate the verification metadata. There are two options for the value of this parameter.</p>
+<h3 id="absolute-or-relative-url" tabindex="-1"><a class="toc-anchor d-print-none" href="#absolute-or-relative-url">§</a> Absolute or relative URL</h3>
+<p>The first option is a URL, which may be either absolute or relative.</p>
+<ol>
+<li>
+<p>If a URL is used, a relative URL is RECOMMENDED.</p>
+</li>
+<li>
+<p>If a relative URL is used:</p>
+<ol>
+<li>
+<p>The base URL MUST be assumed to be <code>https://</code></p>
+</li>
+<li>
+<p>It is NOT RECOMMENDED for the relative URL to include its own query or fragment component.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>Examples:</p>
+<p><code>did:scid:vh:1:f3ad7beb1abc4a26b892466df4379a51?src=my.name.me</code></p>
+<p><code>did:scid:vh:1:f3ad7beb1abc4a26b892466df4379a51?src=example.com/allan</code></p>
+<p><code>did:scid:vh:1:f3ad7beb1abc4a26b892466df4379a51?src=did.company.info/employee/abc</code></p>
+<h3 id="did-method" tabindex="-1"><a class="toc-anchor d-print-none" href="#did-method">§</a> DID method</h3>
+<p>The second option is to use a DID method. If this option is used, the specification for the target DID method MUST support storage and lookup/retrieval of the verification metadata for a <code>did:scid</code>.</p>
+<p>This example assumes a hypothetical modified version of the <a href="https://docs.cheqd.io/product/architecture/adr-list/adr-001-cheqd-did-method">cheqd DID method</a> (discussed <a href="https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/131858449/DID+SCID+Resolution+Overview#Suboption-%232%3A-Algorithmic-DID-Linked-Resources-URL">here</a> on the DID SCID Resolution Overview page) that specifies: 1) using the <code>did:scid</code> DID as the <code>unique-id</code> component of a <code>did:cheqd</code> DID as specified in <a href="https://docs.cheqd.io/product/architecture/adr-list/adr-001-cheqd-did-method#syntax-for-did-cheqd-method">the Syntax section of the did:cheqd method</a>, and 2) how to retrieve the <code>did:scid</code> DID verification metadata from the <a href="https://cheqd.io/">cheqd</a> blockchain:</p>
+<p><code>did:scid:vh:1:f3ad7beb1abc4a26b892466df4379a51?src=did:cheqd:testnet</code></p>
+<h2 id="alsoknownas-property" tabindex="-1"><a class="toc-anchor d-print-none" href="#alsoknownas-property">§</a> alsoKnownAs property</h2>
+<p><em>This section is normative.</em></p>
+<div id="warning-2" class="notice warning"><a class="notice-link" href="#warning-2">WARNING</a><p>IMPORTANT: The requirements in this section apply only to values of the <code>alsoKnownAs</code> property in a DID document that contain the same <code>did:scid</code> DID as the DID document itself. These requirements DO NOT apply to any other values of the <code>alsoKnownAs</code> property.</p>
+</div>
+<p>For a <code>did:scid</code> method, the <code>alsoKnownAs</code> property of a DID document as specified in <a href="https://www.w3.org/TR/did-core/"><em>W3C Decentralized Identifiers 1.0</em></a> is a means for discovering other locations of the verification metadata.</p>
+<ol>
+<li>
+<p>The <code>alsoKnownAs</code> property of a DID document for a <code>did:scid</code> DID SHOULD include one entry for each <code>did:scid</code> DID URL that identifies a different location for the verification metadata.</p>
+</li>
+<li>
+<p>For each such <code>did:scid</code> URL, the verification metadata at the location identified by the <code>src</code> parameter value of that <code>did:scid</code> URL has the following requirements:</p>
+<ol>
+<li>
+<p>The values of all versions of the verification metadata that are present in all locations MUST be equivalent.</p>
+</li>
+<li>
+<p>One or more of the locations MAY have a newer version of the verification metadata than the other locations.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>The latter requirement avoids a race condition for the DID controller when synchronizing updates to the verification metadata for a <code>did:scid</code> DID.</p>
+<h2 id="did%3Ascid-formats" tabindex="-1"><a class="toc-anchor d-print-none" href="#did%3Ascid-formats">§</a> did:scid formats</h2>
+<p><em>This section is normative.</em></p>
+<p>Like the <code>did:</code> scheme defined in <a href="https://www.w3.org/TR/did-core/"><em>W3C Decentralized Identifiers (DIDs) 1.0</em></a>, <code>did:scid</code> is a scheme for <code>did:scid</code> formats. As with DID methods, there is no limit to the number of <code>did:scid</code> formats. However, authors SHOULD NOT create a new <code>did:scid</code> format if:</p>
+<ol>
+<li>
+<p>A current <code>did:scid</code> format provides all required functionality, OR</p>
+</li>
+<li>
+<p>A revision to a current <code>did:scid</code> format could add the required new functionality.</p>
+</li>
+</ol>
+<h3 id="did%3Ascid-format-specifications" tabindex="-1"><a class="toc-anchor d-print-none" href="#did%3Ascid-format-specifications">§</a> did:scid format specifications</h3>
+<ol>
+<li>
+<p>A <code>did:scid</code> format MUST have a written specification, either published independently or as an Appendix to this specification.</p>
+</li>
+<li>
+<p>The <code>did:scid</code> format specification MUST meet all the requirements in:</p>
+<ol>
+<li>
+<p>This specification.</p>
+</li>
+<li>
+<p><a href="https://www.w3.org/TR/did-core/"><em>W3C Decentralized Identifiers (DIDs) 1.0</em></a>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>The <code>did:scid</code> format specification SHOULD be available via a canonical URL.</p>
+</li>
+</ol>
+<h3 id="did%3Ascid-format-names" tabindex="-1"><a class="toc-anchor d-print-none" href="#did%3Ascid-format-names">§</a> did:scid format names</h3>
+<div id="note-4" class="notice note"><a class="notice-link" href="#note-4">NOTE</a><p>The recommendations in this section are based on the rationale that <strong>there is no good reason to have a large number of</strong> <code>did:scid</code> <strong>formats</strong>. All SCID-based DID methods work basically the same way. Since cryptographic agility can be supported by versioning an existing <code>did:scid</code> format, it is in the best interests of everyone to have <strong>a small number of very widely supported</strong> <code>did:scid</code> <strong>formats</strong>.</p>
+</div>
+<p><code>did:scid</code> method type names have the same ABNF as DID method names.</p>
+<ol>
+<li>
+<p>It is RECOMMENDED to keep <code>did:scid</code> format names as short as possible.</p>
+</li>
+<li>
+<p>By convention, <code>did:scid</code> format names SHOULD consist of exactly two characters.</p>
+</li>
+<li>
+<p>This specification SHALL maintain a registry of <code>did:scid</code> format names in Appendix A.</p>
+</li>
+</ol>
+<h3 id="did%3Ascid-format-version-identifiers" tabindex="-1"><a class="toc-anchor d-print-none" href="#did%3Ascid-format-version-identifiers">§</a> did:scid format version identifiers</h3>
+<p>Although <a href="https://www.w3.org/TR/did-core/"><em>W3C Decentralized Identifiers (DIDs) 1.0</em></a> does not require DID methods to have version identifiers, practical usage has shown they can be quite valuable, especially to support <a href="https://en.wikipedia.org/wiki/Cryptographic_agility">cryptographic agility</a> as newer and better cryptographic algorithms are developed, especially for <a href="https://en.wikipedia.org/wiki/Post-quantum_cryptography">post-quantum cryptography</a> (PQC). In any case, for a <code>did:scid</code> format, a single digit version identifier plus the colon delimiter adds only two characters to the DID.</p>
+<ol>
+<li>
+<p>A <code>did:scid</code> format MUST have a version number.</p>
+</li>
+<li>
+<p>The version number MUST be one or more digits.</p>
+</li>
+<li>
+<p>Version numbers MUST increment.</p>
+</li>
+</ol>
 <h2 id="security-considerations" tabindex="-1"><a class="toc-anchor d-print-none" href="#security-considerations">§</a> Security Considerations</h2>
 <p>{{REQUIRED for all ToIP specifications. This section SHOULD be formatted as either a numbered list or numbered subsections. <a href="https://www.ietf.org/archive/id/draft-flanagan-7322bis-07.html#name-security-considerations-sec">See this IETF guidance</a> and also the Security Considerations sections in <a href="https://www.w3.org/TR/did-1.0/#security-considerations">DID Core</a> and <a href="https://www.w3.org/TR/vc-data-model/#security-considerations">W3C VC</a>.}}</p>
 <h2 id="privacy-considerations" tabindex="-1"><a class="toc-anchor d-print-none" href="#privacy-considerations">§</a> Privacy Considerations</h2>
@@ -417,9 +684,136 @@ The first sentence MUST be used if the section contains any normative requiremen
 <h3 id="informative-references" tabindex="-1"><a class="toc-anchor d-print-none" href="#informative-references">§</a> Informative References</h3>
 <!-- file: appendix.md -->
 <h2 id="appendices" tabindex="-1"><a class="toc-anchor d-print-none" href="#appendices">§</a> Appendices</h2>
-<h3 id="appendix-a%3A-%7B%7Bname%7D%7D" tabindex="-1"><a class="toc-anchor d-print-none" href="#appendix-a%3A-%7B%7Bname%7D%7D">§</a> Appendix A: {{Name}}</h3>
-<h3 id="appendix-b%3A-%7B%7Bname%7D%7D" tabindex="-1"><a class="toc-anchor d-print-none" href="#appendix-b%3A-%7B%7Bname%7D%7D">§</a> Appendix B: {{Name}}</h3>
-<h3 id="appendix-c%3A-acknowledgements" tabindex="-1"><a class="toc-anchor d-print-none" href="#appendix-c%3A-acknowledgements">§</a> Appendix C: Acknowledgements</h3>
+<h3 id="appendix-a%3A-did%3Ascid-method-type-registry" tabindex="-1"><a class="toc-anchor d-print-none" href="#appendix-a%3A-did%3Ascid-method-type-registry">§</a> Appendix A: did:scid Method Type Registry</h3>
+<div id="todo-1" class="notice todo"><a class="notice-link" href="#todo-1">TODO</a><p>Add <code>did:scid</code> method types (which of course need their own specs). Proposed entries:</p>
+<ol>
+<li>
+<p><code>did:scid:ke</code> — uses the <code>did:webs</code> verification metadata format.</p>
+</li>
+<li>
+<p><code>did:scid:vh</code> — uses the <code>did:webvh</code> verification metadata format.</p>
+</li>
+<li>
+<p><code>did:scid:jl</code> — uses <code>did:jlinc</code> verification metadata format.</p>
+</li>
+</ol>
+<p>NOTE: <code>did:peer</code> is not included in this list for the reasons explained above—all of these <code>did:scid</code> method types can be used peer-to-peer and all offer more features and security than <code>did:peer</code>.</p>
+</div>
+<h3 id="appendix-b%3A-bluesky-did-requirements" tabindex="-1"><a class="toc-anchor d-print-none" href="#appendix-b%3A-bluesky-did-requirements">§</a> Appendix B: Bluesky DID Requirements</h3>
+<p>In December 2024, Bryan Newbold of <a href="https://bsky.app/"><em>Bluesky</em></a> sent the DIF DID Method Standardization WG the following list of requirements of DIDs for Bluesky account holders:</p>
+<ol>
+<li>
+<p>Low and predictable marginal cost at scale (millions of accounts): as an example, SMS verification of user accounts can be prohibitively expensive for service providers, even when costing well under a US dollar per account</p>
+</li>
+<li>
+<p>Ability to create and update identifiers rapidly (within seconds, ideally under a second)</p>
+</li>
+<li>
+<p>Key rotation is a must</p>
+</li>
+<li>
+<p>Reliable and predictable-latency operation, both for updating identifiers and resolving them (the “tail latency” of resolution is important)</p>
+</li>
+<li>
+<p>Identifiers are long-lived and continue to function after periods of inactivity</p>
+</li>
+<li>
+<p>Resolution should not require additional state or context, and “new” resolvers can independently resolve all “old” identifiers</p>
+</li>
+<li>
+<p>DIDs are permanent and immutable account identifiers</p>
+</li>
+</ol>
+<p>Bryan’s email concluded:</p>
+<p><em>The last two requirements make most forms of “DID migration” very difficult to implement with AT Protocol. It is not feasible to re-write DIDs, because they are included in URIs which get included in content-addressed data records. Keeping track of aliases or DID history out of band would mean that a newly-instantiated client or service would be missing history, and would not be able to successfully resolve the same DIDs as an established service. We took it as an invariant that account identity is one-to-one with a permanent DID string.</em></p>
+<h3 id="appendix-c%3A-did-hosts" tabindex="-1"><a class="toc-anchor d-print-none" href="#appendix-c%3A-did-hosts">§</a> Appendix C: DID Hosts</h3>
+<p>Because it is designed to be fully portable, a <code>did:scid</code> DID can have its verification metadata written to any number of target locations (“multi-anchoring”).</p>
+<div id="warning-3" class="notice warning"><a class="notice-link" href="#warning-3">WARNING</a><p><strong>IMPORTANT: When the verification metadata of a</strong> <code>did:scid</code> <strong>DID is written to multiple locations, this may raise data synchronization challenges.</strong> Responsibility for those challenges lies with each <code>did:scid</code> method type specification and/or implementation.</p>
+</div>
+<p>Because location independence is a key feature of the did:scid method, we need a location-independent term for the different types of data repositories that could store verification metadata and respond to did:scid DID resolution requests, i.e., web servers, blockchains, DHTs, trust registries, etc. We propose to call this a <strong>DID host</strong>.</p>
+<p>With <code>did:scid</code>, Bluesky’s requirements could be met if Bluesky implemented this policy:</p>
+<p><em>Any</em> <code>did:scid</code> <em>DID used by Bluesky MUST have its verification metadata published to <strong>at least one</strong> designated Bluesky DID host (for example “did.bsky.social”).</em></p>
+<p>In other words, a <code>did:scid</code> DID can still be 100% portable—the owner can move it anywhere they want any time they want and keep their full verification metadata—BUT if they want to use it with Bluesky, the owner must agree to let Bluesky host at least one copy of their verification metadata on Bluesky’s DID host.</p>
+<p>That way Bluesky can have its cake and eat it too. A <code>did:scid</code> DID can meet both of these requirements:</p>
+<ol>
+<li>
+<p>DIDs are permanent and immutable account identifiers.</p>
+</li>
+<li>
+<p>Resolution should not require additional state or context, and “new” resolvers can independently resolve all “old” identifiers.</p>
+</li>
+</ol>
+<p>For Bluesky, there would always be a known context—the verification metadata for the <code>did:scid</code> DID on their own DID host. Even better, Bluesky can completely control the performance, redundancy, scalability, etc. of that resolution option. At the same time, the <code>did:scid</code> DID controller still has a fully portable DID they can take to any other DID host anywhere anytime.</p>
+<p>This policy also works for any service provider who shares Bluesky’s requirements. In other words, if a service provider wants to be able to “always resolve” a <code>did:scid</code> DID regardless of what other DID hosts the DID controller currently uses, the site can make it part of their terms-of-service that the DID controller must publish their verification metadata to that service provider’s designated DID host.</p>
+<div id="note-5" class="notice note"><a class="notice-link" href="#note-5">NOTE</a><p>This policy also enables service providers to avoid duplicity issues. The service provider’s own DID host will always be authoritative for the verification metadata for the <code>did:scid</code> DID upon which they are relying. If the DID controller writes conflicting update records to that DID host, the service provider can immediately trigger revocation of that <code>did:scid</code> DID.</p>
+</div>
+<h3 id="appendix-d%3A-blockchain-support-using-did%3Acheqd" tabindex="-1"><a class="toc-anchor d-print-none" href="#appendix-d%3A-blockchain-support-using-did%3Acheqd">§</a> Appendix D: Blockchain support using did:cheqd</h3>
+<p>One of the benefits of <code>did:scid</code> is that the verification metadata may be stored on multiple different types of technical infrastructure, including blockchains. A blockchain is an excellent tool for storing the verification metadata due to its immutable nature, tamper-resistance and high availability.</p>
+<p>As such, this section shows how to use the <a href="https://cheqd.io/"><em>cheqd</em></a> blockchain as a <strong>DID host</strong>, based on the description in <a href="#appendix-c%3A-did-hosts">Appendix C</a>.</p>
+<p>Through the use of cheqd’s <a href="https://w3c-ccg.github.io/DID-Linked-Resources/"><em>DID-Linked Resource</em></a> functionality, cheqd is able to store <strong>sequentially ordered, indexable and historically queryable JSON files</strong> that are both cryptographically verifiable and tamper-resistant.</p>
+<p>Using this approach, a <code>did:scid</code> DID can point to the initial verifiable history log on cheqd.</p>
+<ol>
+<li>
+<p>The SCID and verification metadata are generated using the same process as defined in the did:webvh or KERI AID specifications</p>
+</li>
+<li>
+<p>Once generated, the initial verifiable history JSON file is published as a DID-Linked Resource on cheqd. For example:</p>
+<ol>
+<li>
+<p>did:cheqd:testnet:9cdea85b-7524-4962-ad11-c943b8303692?resourceName=didScidExample&amp;resourceType=didScidLogEntry&amp;resourceVersionTime=2025-01-23T07:17:26Z</p>
+</li>
+<li>
+<p>(Using cheqd DID Resolver) <a href="https://resolver.cheqd.net/1.0/identifiers/did:cheqd:testnet:9cdea85b-7524-4962-ad11-c943b8303692?resourceName=didScidExample&amp;resourceType=didScidLogEntry&amp;resourceVersionTime=2025-01-23T07:17:26Z"><em>https://resolver.cheqd.net/1.0/identifiers/did:cheqd:testnet:9cdea85b-7524-4962-ad11-c943b8303692?resourceName=didScidExample&amp;resourceType=didScidLogEntry&amp;resourceVersionTime=2025-01-23T07:17:26Z</em></a></p>
+</li>
+<li>
+<p>(using DIF Universal Resolver) <a href="https://dev.uniresolver.io/1.0/identifiers/did:cheqd:testnet:9cdea85b-7524-4962-ad11-c943b8303692?resourceName=didScidExample&amp;resourceType=didScidLogEntry&amp;resourceVersionTime=2025-01-23T07:17:26Z">https://dev.uniresolver.io/1.0/identifiers/did:cheqd:testnet:9cdea85b-7524-4962-ad11-c943b8303692?resourceName=didScidExample&amp;resourceType=didScidLogEntry&amp;resourceVersionTime=2025-01-23T07:17:26Z</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p>When publishing the verification metadata JSON file on cheqd, the controller MUST also publish the following metadata to enable the file to be queried:</p>
+<ol>
+<li>
+<p>resourceName: Any arbitrary string, naming the file</p>
+</li>
+<li>
+<p>resourceType: MUST be <code>didScidLogEntry</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p>The controller MAY also publish the following optional metadata:</p>
+<ol>
+<li>
+<p>alternativeUri: A string or array specifying alternative locations where the initial verification metadata log is <em><strong>also</strong></em> published</p>
+</li>
+<li>
+<p>resourceVersion: To enable more granular querying by a specific version name or number</p>
+</li>
+</ol>
+</li>
+<li>
+<p>The DID-Linked Resource SHOULD be signed using the same keys specified in the “<code>authentication</code>” section of the DID Document, ensuring cryptographic verifiability back to the controller of the DID Document.</p>
+</li>
+<li>
+<p>Using this persistent identifier for the initial verification metadata, a <code>did:scid</code> DID can be derived. For example:</p>
+<ol>
+<li>
+<p>did:scid:ke:3:EKYGGh-FtAphGmSZbsuBs_t4qpsjYJ2ZqvMKluq9OxmP?src=did:cheqd:testnet:9cdea85b-7524-4962-ad11-c943b8303692</p>
+</li>
+<li>
+<p>Including a portable <code>did:scid</code> DID which can be migrated to different infrastructure:</p>
+<ol>
+<li>did:scid:ke:3:EKYGGh-FtAphGmSZbsuBs_t4qpsjYJ2ZqvMKluq9OxmP</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>While the verification metadata in this particular DID example is stored on cheqd, owing to the nature of <code>did:scid</code>, the DID Documents and associated verification metadata can be stored and updated elsewhere, such as on a web server. This is because the SCID can always be decoded by a relying party to dereference back to the initial verification metadata on cheqd.</p>
+<p>Additionally, a relying party will be able to check any updates to the verification metadata as cheqd provides the functionality of a “microledger” for resource versions. See below for how cheqd would work as a ledger of verification metadata updates:</p>
+<p><a href="https://resolver.cheqd.net/1.0/identifiers/did:cheqd:testnet:9cdea85b-7524-4962-ad11-c943b8303692?resourceName=didScidExample&amp;resourceType=didScidLogEntry&amp;resourceMetadata=true"><em>https://resolver.cheqd.net/1.0/identifiers/did:cheqd:testnet:9cdea85b-7524-4962-ad11-c943b8303692?resourceName=didScidExample&amp;resourceType=didScidLogEntry&amp;resourceMetadata=true</em></a></p>
+<h3 id="appendix-e%3A-acknowledgements" tabindex="-1"><a class="toc-anchor d-print-none" href="#appendix-e%3A-acknowledgements">§</a> Appendix E: Acknowledgements</h3>
 <p>{{The final appendix should contain any additional acknowledgements}}</p>
 <p>Copyright © {{Year}} Trust Over IP (ToIP) Contributors<br>
 This work is licensed under a Creative Commons Attribution 4.0 International License.</p>
@@ -541,8 +935,8 @@ This work is licensed under a Creative Commons Attribution 4.0 International Lic
                 <div id="build-info" class="small text-muted">
                     <div class="d-flex align-items-center mb-1">
                         <i class="bi bi-calendar-event me-2" aria-hidden="true"></i>
-                        <time class="timestamp" datetime="2026-10-29T16:54:58.406Z">
-                            Generated: 2026-10-29T16:54:58.406Z
+                        <time class="timestamp" datetime="2026-10-29T17:12:17.888Z">
+                            Generated: 2026-10-29T17:12:17.888Z
                         </time>
                     </div>
                     <div class="d-flex align-items-center mb-1">
