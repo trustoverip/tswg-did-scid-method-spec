@@ -1,0 +1,36 @@
+{
+  "specs": [
+    {
+      "title": "DID SCID Method Specification",
+      "description": "Specification of the did:scid DID method, developed by the ToIP Technology Stack Working Group.",
+      "author": "Trust over IP Foundation",
+      "spec_directory": "./spec",
+      "spec_terms_directory": "terms-definitions",
+      "output_path": "./docs",
+      "markdown_paths": [
+        "header.md",
+        "intro.md",
+        "terms-and-definitions-intro.md",
+        "body.md",
+        "appendix.md"
+      ],
+      "logo": "https://raw.githubusercontent.com/trustoverip/spec-up-t/refs/heads/master/src/install-from-boilerplate/boilerplate/static/logo.svg",
+      "logo_link": "https://github.com/trustoverip/spec-up-t",
+      "favicon": "https://raw.githubusercontent.com/trustoverip/spec-up-t/refs/heads/master/src/install-from-boilerplate/boilerplate/static/favicon.ico",
+      "source": {
+        "host": "github",
+        "account": "trustoverip",
+        "repo": "tswg-did-scid-method-spec"
+      },
+      "external_specs": [
+        {
+          "external_spec": "ToIP_Glossary",
+          "gh_page": "https://glossary.trustoverip.org",
+          "url": "https://github.com/trustoverip/ctwg-main-glossary"
+        }
+      ],
+      "katex": false,
+      "anchor_symbol": "§"
+    }
+  ]
+}
