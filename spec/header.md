@@ -3,14 +3,16 @@
 # DID SCID Method Specification
 
 _Version:_ {{MUST be in X.X or X.XX format}}  
-_Document Status:_ {{MUST be one of: Working Draft, Working Group Approved Deliverable, ToIP Approved Deliverable}}  
+_Document Status:_ Working Draft
 _DOI:_ {{see [this wiki page](https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/767787009/ToIP+Approved+Deliverable+Process#Persistent-DOI-Link) for instructions about how to add a DOI}}  
 _GitHub:_ <https://github.com/trustoverip/tswg-did-scid-method-spec>
 
 _Editors:_ {{MUST list the full names, optional OrcID and official LF affiliations of each editor.}}
 
-- {{Editor 1, Org A}}
-- {{Editor 2, Org B}}
+- Drummond Reed, {{Org}}
+- Markus Sabadello, {{Org}}
+- Jonathan Rayback, {{Org}}
+- Alex Tweeddale, {{Org}}
 
 _Contributors:_ {{MUST list the full names and official LF affiliations of each substantial contributor — all other acknowledgements go in the Acknowledgements Appendix at the end.}}
 
